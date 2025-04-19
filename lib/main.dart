@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor:Colors.cyan)
       ),
-      // home: const DemoPage(title : 'PDF Home Page')
-      home: const PDFViewerPage()
+      home: const DemoPage(title : 'PDF Home Page')
+      // home: const PDFViewerPage()
     );
   }
 }
@@ -49,7 +49,13 @@ class DemoPage extends StatelessWidget{
               ),
             ElevatedButton(
               onPressed: (){
-              //Placeholder stuff
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context){
+                      return const PDFViewerPage();
+                    })
+                );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
@@ -81,18 +87,19 @@ class PDFViewerPage extends StatelessWidget{
         title: Text("THE PDF"),
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios_new_rounded),
+          onPressed: (){
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            FloatingActionButton(
-              onPressed: (){
-                //go back to home
-              },
-              child: Icon(Icons.arrow_left)
-            )
+            //PDF
           ],
         )
       )
