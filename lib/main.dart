@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor:Colors.cyan)
       ),
-      home: const DemoPage(title : 'PDF Home Page')
+      // home: const DemoPage(title : 'PDF Home Page')
+      home: const PDFViewerPage()
     );
   }
 }
@@ -65,6 +66,36 @@ class DemoPage extends StatelessWidget{
       ),
       backgroundColor: Colors.black,
 
+    );
+  }
+}
+
+class PDFViewerPage extends StatelessWidget{
+  const PDFViewerPage({super.key});
+
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("THE PDF"),
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            FloatingActionButton(
+              onPressed: (){
+                //go back to home
+              },
+              child: Icon(Icons.arrow_left)
+            )
+          ],
+        )
+      )
     );
   }
 }
