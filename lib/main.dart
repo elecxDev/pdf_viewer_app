@@ -88,20 +88,17 @@ class PDFViewerPage extends StatelessWidget{
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new_rounded),
+          icon: Icon(Icons.arrow_back),
           onPressed: (){
             Navigator.pop(context);
           },
         ),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            //PDF
-          ],
-        )
+        child: SfPdfViewer.asset(
+          'assets/coding.pdf',
+          scrollDirection: PdfScrollDirection.vertical,
+          )
       )
     );
   }
