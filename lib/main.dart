@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:flutter/material.dart';
 
@@ -76,9 +75,14 @@ class DemoPage extends StatelessWidget{
   }
 }
 
-class PDFViewerPage extends StatelessWidget{
+class PDFViewerPage extends StatefulWidget{
   const PDFViewerPage({super.key});
 
+  @override
+  State<PDFViewerPage> createState() => _PDFViewerPageState();
+}
+
+class _PDFViewerPageState extends State<PDFViewerPage> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -98,6 +102,11 @@ class PDFViewerPage extends StatelessWidget{
         child: SfPdfViewer.asset(
           'assets/coding.pdf',
           scrollDirection: PdfScrollDirection.vertical,
+          canShowScrollStatus: true,
+          enableTextSelection: true,
+          maxZoomLevel: 10000,
+          canShowTextSelectionMenu: true,
+          pageLayoutMode: PdfPageLayoutMode.continuous,
           )
       )
     );
