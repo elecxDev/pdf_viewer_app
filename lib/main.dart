@@ -35,40 +35,58 @@ class DemoPage extends StatelessWidget{
         shadowColor: Colors.amber,
         foregroundColor: Colors.blue,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              "The Button",
+      body: Column(
+        children: [
+          Expanded(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text(
+                    "Coding Resources Material",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30,
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const PDFViewerPage();
+                          },
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                    ),
+                    child: const Text(
+                      "View PDF",
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 20),
+            child: Text(
+              "This is a demo assessment exhibit.",
+              textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 30
-                ),
+                color: Colors.blueGrey,
               ),
-            ElevatedButton(
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context){
-                      return const PDFViewerPage();
-                    })
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
-              ),
-              child: const Text(
-                "View PDF",
-                style: TextStyle(
-                  fontSize: 30
-                ),
-              ),
-            )
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
+
       backgroundColor: Colors.black,
 
     );
@@ -88,7 +106,7 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("THE PDF"),
+        title: Text("Coding Resources"),
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
         leading: IconButton(
