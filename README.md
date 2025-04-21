@@ -1,16 +1,44 @@
-# pdf_viewer_app
+# PDF Viewer App
 
-A new Flutter project.
+This is a demo Flutter app that showcases a PDF viewer functionality. The app allows users to view a PDF document directly within the app. It includes a simple user interface with a button to navigate to the PDF viewer page.
 
-## Getting Started
+## Features
+- **View PDF**: Displays a PDF document stored in the app's assets.
+- **Navigation**: Easy navigation between the home page and PDF viewer page.
+- **Responsive UI**: Simple and responsive layout designed with Flutter.
 
-This project is a starting point for a Flutter application.
+## Technologies Used
+- Flutter
+- Syncfusion Flutter PDF Viewer
+- Dart
 
-A few resources to get you started if this is your first Flutter project:
+## Setup Instructions
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Clone this repository to your local machine:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+   ```bash
+   git clone [repository-url]
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   flutter pub get
+   ```
+
+3. Add your PDF file (e.g., `coding.pdf`) to the `assets` folder.
+
+4. Run the app:
+
+   ```bash
+   flutter run
+   ```
+
+## License
+
+© 2025 elecxDev. All rights reserved.  
+This code is licensed under the terms stated in the LICENSE file.
+
+## Contact
+
+For any questions or further information, feel free to reach out [here](mailto:elecdev.business@gmail.com)
